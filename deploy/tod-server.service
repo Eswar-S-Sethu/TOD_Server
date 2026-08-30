@@ -1,0 +1,27 @@
+[Unit]
+Description=TOD Flask Server
+After=network.target
+# Ensure the tunnel is not started until this is healthy (optional ordering)
+Before=cloudflared.service
+
+[Service]
+Type=simple
+User=TOD_USER
+Group=TOD_USER
+
+WorkingDirectory=/opt/tod-server
+ExecStart=/opt/tod-server/.venv/bin/python main.py
+
+# Restart on crash, but not on clean exit (e.g. intentional stop)
+Restart=on-failure
+RestartSec=5
+
+# Write logs to journald — view with: journalctl -u tod-server -f
+StandardOutput=journal
+StandardError=journal
+
+# Create the Trolleys directory if it doesn't exist before starting
+ExecStartPre=/bin/mkdir -p /opt/tod-server/Trolleys
+
+[Install]
+WantedBy=multi-user.target

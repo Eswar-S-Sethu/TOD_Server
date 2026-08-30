@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(\"C:/Users/Eswar/PycharmProjects/TOD_Server/.venv/Scripts/pip\" list)",
+      "Bash(python -m pip:*)",
+      "Bash(\"C:/Users/Eswar/PycharmProjects/TOD_Server/.venv/Scripts/pip\" install flask pillow piexif)",
+      "Bash(\"C:/Users/Eswar/PycharmProjects/TOD_Server/.venv/Scripts/python\" -c \"import sys; sys.path.insert\\(0, ''C:/Users/Eswar/PycharmProjects/TOD_Server''\\); from main import app; print\\(''OK''\\)\")",
+      "Bash(\"C:/Users/Eswar/PycharmProjects/TOD_Server/.venv/Scripts/pip\" install requests --quiet)",
+      "Bash(\"C:/Users/Eswar/PycharmProjects/TOD_Server/.venv/Scripts/python\" -c \":*)"
+    ]
+  }
+}
